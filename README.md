@@ -17,6 +17,7 @@ public class CommonActivity extends SwipeBackActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setSlideEnable(true);//default is true
     }
 }
 ```
@@ -27,9 +28,10 @@ Step 2:Make window translucent by adding ```<item name="android:windowIsTransluc
     <item name="android:windowIsTranslucent">true</item>
 </style>
 ```
-Step 3:You can set this to control whether you can swipe
+Step 3:You can set this to control whether you can swipe 
 ```
-setSlideEnable(false);
+//default is true
+setSlideEnable(true);
 ```
 ### To-Do List
 - [ ] Perfect extensions
