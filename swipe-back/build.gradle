@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = "wenlong.me.swipeback" // Maven Group ID for the artifact，一般填你唯一的包名
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    testCompile 'junit:junit:4.12'
+
+}
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'swipeback'
+
+    publishedGroupId = 'me.guowenlong.swipeback'
+    libraryName = 'SwipeBack'
+    artifact = 'swipe-back'
+
+    libraryDescription = 'A Lib of mine'
+    siteUrl = 'https://github.com/MixAndroid/SwipeBack' // 修改为你的项目的主页
+    gitUrl = 'git@github.com:Wenlong-Guo/SwipeBack.git' // 修改为你的Git仓库的url
+    libraryVersion = '0.0.9'
+
+    developerId = 'wenlong'
+    developerName = 'Guo Wenlong'
+    developerEmail = 'guowenlong20000@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
