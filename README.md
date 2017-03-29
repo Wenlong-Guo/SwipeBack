@@ -34,9 +34,10 @@ Step 3:You can set this to control whether you can swipe
 setSlideEnable(true);
 ```
 
-### release
-#### 0.1.0 You can set whether the covered activity can be linked
-#### 0.0.9 Complete the main function
+## release
+#### 0.1.0 ------You can set whether the covered activity can be linked
+#### 0.0.9 ------Complete the main function
+
 ### To-Do List
 - [ ] Perfect extensions
 - [ ] Perfect samples
