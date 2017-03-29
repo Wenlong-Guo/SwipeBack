@@ -9,7 +9,7 @@ import java.util.Stack;
  * time  : 2017年03月16日 下午 12:02.
  */
 
-public class SwipeUtils {
+public class SwipeBackUtils {
 
   private static Stack<SwipeBackLayout> mSwipeBackLayouts = new Stack<>();
 

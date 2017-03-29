@@ -21,6 +21,6 @@ public class MainActivity extends SwipeBackActivity {
                 startActivity(new Intent(MainActivity.this,MainActivity.class));
             }
         });
-//        setSlideEnable(false);
+//        setSwipeBackEnable(false);
     }
 }

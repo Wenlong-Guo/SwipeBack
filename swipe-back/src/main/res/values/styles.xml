@@ -4,6 +4,5 @@
     <item name="android:windowIsTranslucent">true</item>
   </style>
   <!-- Application theme. -->
-  <style name="SwipeTheme" parent="@style/AppBaseTheme">
-  </style>
+  <style name="SwipeTheme" parent="@style/AppBaseTheme"></style>
 </resources>

@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import me.guowenlong.swipeback.common.SwipeBackLayout;
 import me.guowenlong.swipeback.common.SwipeListener;
-import me.guowenlong.swipeback.common.SwipeUtils;
+import me.guowenlong.swipeback.common.SwipeBackUtils;
 
 
 /**
@@ -23,7 +23,9 @@ import me.guowenlong.swipeback.common.SwipeUtils;
 public class SwipeBackActivity extends AppCompatActivity {
 
   private SwipeBackLayout swipe;
-  private boolean isSlideEnable = true;
+  private boolean isSwipeBackEnable = true;
+  private boolean isLinkageEnable = true;
+
   @Override
   protected void onPostCreate(@Nullable Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
@@ -47,25 +49,44 @@ public class SwipeBackActivity extends AppCompatActivity {
 
       @Override
       public void onScroll(float f, int i) {
-        SwipeUtils.getSwipeBackLayout(swipe).setX(Math.min(-500 * Math.max(1 - f, 0) + 40, 0));
-        if (f == 0) {
-          SwipeUtils.getSwipeBackLayout(swipe).setX(0);
+        if (isLinkageEnable) {
+          SwipeBackUtils.getSwipeBackLayout(swipe)
+              .setX(Math.min(-500 * Math.max(1 - f, 0) + 40, 0));
+          if (f == 0) {
+            SwipeBackUtils.getSwipeBackLayout(swipe).setX(0);
+          }
         }
       }
     });
-    swipe.setSlideEnable(isSlideEnable);
+    swipe.setSlideEnable(isSwipeBackEnable);
     swipe.addView(decorChild);
     decor.addView(swipe);
-    SwipeUtils.onCreate(swipe);
+    if (isLinkageEnable){
+      SwipeBackUtils.onCreate(swipe);
+    }
   }
 
   @Override
   protected void onDestroy() {
     super.onDestroy();
-    SwipeUtils.onDestory(swipe);
+    if (isLinkageEnable){
+      SwipeBackUtils.onDestory(swipe);
+    }
   }
 
-  public void setSlideEnable(boolean isSlideEnable){
-    this.isSlideEnable = isSlideEnable;
+  /**
+   * 设置是否可以向右滑动返回
+   * @param isSwipeBackEnable
+   */
+  public void setSwipeBackEnable(boolean isSwipeBackEnable) {
+    this.isSwipeBackEnable = isSwipeBackEnable;
+  }
+
+  /**
+   * 设置被覆盖的activity是否联动(仿微信)
+   * @param isLinkageEnable
+   */
+  public void setLinkageEnable(boolean isLinkageEnable) {
+    this.isLinkageEnable = isLinkageEnable;
   }
 }
