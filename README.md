@@ -6,7 +6,7 @@ In your ```build.gradle:```
 
 ```
 dependencies {
-    compile 'me.guowenlong.swipeback:swipe-back:0.0.9'
+    compile 'me.guowenlong.swipeback:swipe-back:0.1.1'
 }
 ```
 ## Usage
