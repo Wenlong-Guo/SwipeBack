@@ -35,6 +35,7 @@ setSlideEnable(true);
 ```
 
 ## release
+#### 0.1.1 ------Fix bug and Complete the example
 #### 0.1.0 ------You can set whether the covered activity can be linked
 #### 0.0.9 ------Complete the main function
 
