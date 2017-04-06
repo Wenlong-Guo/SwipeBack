@@ -40,8 +40,8 @@ setSlideEnable(true);
 #### 0.0.9 ------Complete the main function
 
 ### To-Do List
-- [x] Perfect samples
-- [ ] Perfect extensions
+- [x] samples finished
+- [ ] Titlebar linkage
 
 ## License
 ```
