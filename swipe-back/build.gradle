@@ -42,7 +42,7 @@ ext {
     artifact = 'swipe-back'
 
     libraryDescription = 'A Lib of mine'
-    siteUrl = 'https://github.com/MixAndroid/SwipeBack' // 修改为你的项目的主页
+    siteUrl = 'https://github.com/Wenlong-Guo/SwipeBack' // 修改为你的项目的主页
     gitUrl = 'git@github.com:Wenlong-Guo/SwipeBack.git' // 修改为你的Git仓库的url
     libraryVersion = '0.1.1'
 
